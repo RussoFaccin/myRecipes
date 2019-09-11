@@ -1,0 +1,227 @@
+/*
+| ================================================================================
+| Icon font
+| ================================================================================
+*/
+
+@font-face {
+  font-family: 'mrcpIcons';
+  src:
+    url('assets/font/mrcpIcons.ttf?ciaitm') format('truetype'),
+    url('assets/font/mrcpIcons.woff?ciaitm') format('woff'),
+    url('assets/font/mrcpIcons.svg?ciaitm#mrcpIcons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.mrcpIcons {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'mrcpIcons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mrcpIcons__icon-add-new::after {
+  content: "\e900";
+}
+.mrcpIcons__icon-delete-item::after {
+  content: "\e901";
+}
+.mrcpIcons__icon-edit-item::after {
+  content: "\e902";
+}
+.mrcpIcons__icon-menu::after {
+  content: "\e903";
+}
+.mrcpIcons__icon-navigate-back::after {
+  content: "\e904";
+}
+.mrcpIcons__icon-search::after {
+  content: "\e905";
+}
+.mrcpIcons__icon-trash::after {
+  content: "\e906";
+}
+
+/*
+| ================================================================================
+| Properties
+| ================================================================================
+*/
+
+:root {
+  --primaryColor: #ff6e00;
+  --secondaryColor: #158000;
+  --accentColor: #e60013;
+  --primaryFont: sans-serif;
+}
+
+/*
+| ================================================================================
+| Globals
+| ================================================================================
+*/
+
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  font-size: 10px;
+}
+
+.mrcpSimpleButton {
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.mrcpSimpleButton.--outline {
+  border: 3px solid var(--secondaryColor);
+  background-color: transparent;
+}
+
+/*
+| ================================================================================
+| Scoped
+| ================================================================================
+*/
+
+.m-appContent {
+  position: relative;
+  overflow: hidden auto;
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.m-pageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100%;
+}
+
+.mrcpInput__group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.mrcpInput__input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background-color: transparent;
+  padding-left: 10px;
+  height: 40px;
+  box-shadow: 1px 1px 3px inset rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+.mrcpInput__input:focus {
+  outline: 0;
+}
+
+.mrcpInput__icon {
+  position: absolute;
+  right: 10px;
+  opacity: 0.5;
+}
+
+.u-sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  width: 0;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+/*
+| ================================================================================
+| Pattern Library
+| ================================================================================
+*/
+
+/* ===== Basic Button ===== */
+.mrcpButton {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondaryColor);
+  text-transform: uppercase;
+  font-family: inherit;
+  font-weight: bolder;
+  border: 0;
+  background-color: transparent;
+  padding: 5px 10px;
+  border-radius: 8px;
+  height: 36px;
+}
+
+.mrcpButton__label {
+  font-family: var(--primaryFont);
+}
+
+.mrcpButton:hover,
+.mrcpButton:active {
+  background-color: rgba(0, 0, 0, 0.2);
+  outline: 0;
+}
+
+/* ===== Raised Button ===== */
+
+.mrcpButton--raised {
+  color: #FFF;
+  background-color: var(--secondaryColor);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Outlined Button ===== */
+
+.mrcpButton--outlined {
+  border: 3px solid var(--accentColor);
+}
+
+/* ===== Rounded Button ===== */
+
+.mrcpButton--rounded {
+  border-radius: 18px;
+}
+
+.mrcpElevation--z1 {
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.mrcpElevation--z2 {
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.5);;
+}

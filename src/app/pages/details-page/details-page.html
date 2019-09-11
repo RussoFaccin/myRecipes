@@ -1,0 +1,16 @@
+<section class="m-pageContainer">
+  <app-bar [isHome]="false"></app-bar>
+  <div class="m-appContent m-editPage">
+    <h2>{{selectedRecipe.title}}</h2>
+    <img class="m-editPage__thumb" src="{{selectedRecipe.thumb}}" alt="">
+    <h3>Category: {{selectedRecipe.category | categoryName}}</h3>
+    <app-list-item
+      title="Ingredients"
+      [entries]="selectedRecipe.ingredients"
+    ></app-list-item>
+    <app-list-item
+      title="instructions"
+      [entries]="selectedRecipe.instructions"
+    ></app-list-item>
+  </div>
+</section>

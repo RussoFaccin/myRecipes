@@ -1,0 +1,22 @@
+<div class="m-editList">
+  <div class="m-editList__header">
+    <h1 class="m-editList__heading">{{title}}</h1>
+    <button class="m-editList__action mrcpIcons" (click)="addNew()">
+      <span class="mrcpIcons mrcpIcons__icon-add-new"></span>
+    </button>
+  </div>
+  <ul class="m-editItem__list">
+    <li class="m-editItem" *ngFor="let entry of scopedEntries; let i = index">
+      <input
+        class="mrcpInput__input"
+        type="text"
+        [(ngModel)]="scopedEntries[i].value"
+        (input)="onChangeList()"
+        name="fld_entry"
+      />
+      <button class="m-editList__action mrcpIcons" (click)="onDeleteItem(i)">
+        <span class="mrcpIcons mrcpIcons__icon-delete-item"></span>
+      </button>
+    </li>
+  </ul>
+</div>

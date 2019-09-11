@@ -1,0 +1,47 @@
+<section class="m-pageContainer">
+  <app-bar class="mrcpElevation--z2" [isHome]="false"></app-bar>
+  <div class="m-appContent">
+    <div class="m-recipeForm">
+      <div class="mrcpInput__group">
+        <input class="mrcpInput__input" type="text" [(ngModel)]="recipe.title" name="fld_title" placeholder="Title"/>
+      </div>
+      <h4 class="headingDivider">Thumbnail:</h4>
+      <div class="m-recipeThumb" #recipeThumb>
+        <video [ngClass]="{'--active': isStreaming}" class="m-videoStream" poster="{{recipe.thumb}}" width="300" height="300" autoplay #video></video>
+        <img src="{{recipe.thumb}}" alt="" class="m-recipeThumb__pic" />
+        <button *ngIf="!isStreaming" class="m-recipeThumb__addNewButton" (trigger)="addNewThumb()" aria-label="Add new thumbnail" mrcpRipple>
+          <span class="u-sr-only">Add new thumbnail</span>
+        </button>
+        <div class="m-recipeThumb__thirds" [ngClass]="{'--active': isStreaming}" #thirds>
+          <div class="m-recipeThumb__thirdsCell"></div>
+          <div class="m-recipeThumb__thirdsCell"></div>
+          <div class="m-recipeThumb__thirdsCell"></div>
+          <div class="m-recipeThumb__thirdsCell"></div>
+          <div class="m-recipeThumb__thirdsCell"></div>
+          <div class="m-recipeThumb__thirdsCell"></div>
+          <div class="m-recipeThumb__thirdsCell"></div>
+          <div class="m-recipeThumb__thirdsCell"></div>
+          <div class="m-recipeThumb__thirdsCell"></div>
+        </div>
+      </div>
+      <h4 class="headingDivider">Category:</h4>
+      <app-select [entries]="entries" [selectedId]="recipe.category" (changed)="changeCategory($event)"></app-select>
+    </div>
+    <edit-list
+      title="Ingredients"
+      (changed)="updateIng($event)"
+      [entries]="recipe.ingredients"
+    ></edit-list>
+    <edit-list
+      title="Instructions"
+      (changed)="updateInst($event)"
+      [entries]="recipe.instructions"
+    ></edit-list>
+    <div class="recipeForm__actionBox">
+        <button class="mrcpButton mrcpButton--raised" (click)="onSaveRecipe()">
+            Save Recipe
+          </button>
+          <button class="mrcpButton mrcpButton--raised" (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</section>

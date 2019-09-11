@@ -1,0 +1,38 @@
+:host {
+  --headerHeight: 36px;
+  width: 100%;
+}
+
+.m-editList__header {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.15);
+  height: var(--headerHeight);
+  border-radius: calc(var(--headerHeight) / 2);
+  overflow: hidden;
+}
+
+.m-editList__heading {
+  margin: 0;
+  flex: 1;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.m-editItem {
+  display: flex;
+}
+
+.m-editList__action {
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  width: var(--headerHeight);
+  height: var(--headerHeight);
+  font-size: 1rem;
+}
+
+.m-editItem__list {
+  margin: 0;
+  padding: 0;
+}

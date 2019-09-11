@@ -1,0 +1,22 @@
+<!-- Home Page -->
+<div class="rcp-appBar" *ngIf="isHome; else elseBlock">
+  <button *ngIf="isHome" class="a-appBarAction mrcpIcons" (trigger)="ToggleDrawer()" mrcpRipple rippleDuration="0.25" aria-label="Toggle menu">
+    <span class="u-sr-only">Toggle menu</span>
+    <span class="mrcpIcons__icon-menu"></span>
+  </button>
+  <h1 class="rcp-appBar__title">App Title</h1>
+  <button *ngIf="isHome" class="a-appBarAction mrcpIcons" (trigger)="actionAdd()" mrcpRipple aria-label="Add new recipe">
+      <span class="u-sr-only">Add new recipe</span>
+    <span class="mrcpIcons__icon-add-new"></span>
+  </button>
+</div>
+<!-- Inner Pages  -->
+<ng-template #elseBlock>
+  <div class="rcp-appBar">
+    <button *ngIf="!isHome" class="a-appBarAction mrcpIcons" (trigger)="actionBack()" mrcpRipple aria-label="Navigate home">
+        <span class="u-sr-only">Navigate home</span>
+      <span class="mrcpIcons__icon-navigate-back"></span>
+    </button>
+    <h1 class="rcp-appBar__title">App Title</h1>
+  </div>
+</ng-template>

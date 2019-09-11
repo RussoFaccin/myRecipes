@@ -1,0 +1,6 @@
+<div class="appSelect">
+  <div class="appSelect__trigger" (click)="toggleOptions()">{{placeholder}}</div>
+  <div *ngIf="opened" class="appSelect__options">
+    <div *ngFor="let entry of computedEntries" class="appSelect__optionItem" (click)="selectOption(entry)">{{entry.label}}</div>
+  </div>
+</div>

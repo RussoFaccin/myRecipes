@@ -1,0 +1,52 @@
+:host {
+  --animationTime: 0.25s;
+  z-index: 1;
+}
+
+.m-appDrawer {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  /* transform: translateX(-100%); */
+  transition: all var(--animationTime) ease-out;
+  visibility: hidden;
+}
+
+.m-appDrawer.--open {
+  opacity: 1;
+  visibility: visible;
+  /* transform: translateX(0); */
+}
+
+.m-appDrawer__content {
+  display: inline-block;
+  height: 100%;
+  background-color: #FFF;
+  transform: translateX(-100%);
+  transition: all var(--animationTime) ease-out;
+}
+
+.--open .m-appDrawer__content {
+  transform: translateX(0);
+}
+
+.m-appDrawer__item {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 5px 10px;
+  background-color: transparent;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.m-appDrawer__item:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.m-appDrawer__item:not(:last-of-type) {
+  border-bottom: 1px groove;
+}

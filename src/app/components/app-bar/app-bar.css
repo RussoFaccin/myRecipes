@@ -1,0 +1,28 @@
+:host {
+  z-index: 1;
+}
+
+.rcp-appBar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 46px;
+  background-color: var(--primaryColor);
+  padding: 0 10px;
+  cursor: default;
+}
+
+.rcp-appBar__title {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.a-appBarAction {
+  width: 46px;
+  height: 46px;
+  border: 0;
+  background-color: transparent;
+  color: var(--accentColor);
+  font-size: 20px;
+}

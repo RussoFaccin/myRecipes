@@ -1,0 +1,14 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  heigh: 100%;
+}
+
+.u-textHide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
