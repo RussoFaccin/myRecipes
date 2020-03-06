@@ -5,13 +5,13 @@ import { Categories, Recipe } from '../../models/recipe.model';
 import { RecipeService } from '../../services/recipe.service';
 
 @Component({
-  selector: 'details-page',
+  selector: 'app-details-page',
   templateUrl: './details-page.html',
   styleUrls: ['./details-page.css']
 })
-export class DetailsPage {
+export class DetailsPageComponent {
   selectedRecipe: Recipe;
-  constructor(private recipeService: RecipeService){
+  constructor(private recipeService: RecipeService) {
     this.selectedRecipe = this.recipeService.selectedRecipe;
   }
 }

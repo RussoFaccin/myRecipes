@@ -1,20 +1,20 @@
-import { Component, ViewChild, AfterViewInit, ElementRef } from "@angular/core";
+import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 // Services
-import { RecipeService } from "../../services/recipe.service";
+import { RecipeService } from '../../services/recipe.service';
 
 @Component({
-  selector: "home-page",
-  templateUrl: "./home-page.html",
-  styleUrls: ["./home-page.css"]
+  selector: 'app-home-page',
+  templateUrl: './home-page.html',
+  styleUrls: ['./home-page.css']
 })
-export class HomePage implements AfterViewInit {
+export class HomePageComponent implements AfterViewInit {
   @ViewChild('appDrawer', {static: true})
   appDrawer: any;
   constructor(public recipeService: RecipeService) {
   }
   ngAfterViewInit() {}
   onSearch(evt) {
-    this.recipeService.filterByTitle(evt.target.value)
+    this.recipeService.filterByTitle(evt.target.value);
   }
   onSelectCategory(categoryValue) {
     this.recipeService.filterByCategory(categoryValue);

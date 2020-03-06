@@ -18,13 +18,10 @@ export class Recipe {
     public title: string,
     public thumb: string = null,
     public category: any = Categories.AVES,
-    public ingredients: string[] = [""],
-    public instructions: string[] = [""]
+    public ingredients: string[] = [''],
+    public instructions: string[] = ['']
   ) {
     this.thumb = this.thumb  == null ? 'assets/img/add-new-image.png' : this.thumb;
-  }
-  updateThumb(thumb: string) {
-    this.thumb = thumb;
   }
   static fromJson(jsonData) {
     return new Recipe(
@@ -34,7 +31,9 @@ export class Recipe {
       jsonData.category,
       jsonData.ingredients,
       jsonData.instructions
-      
     );
+  }
+  updateThumb(thumb: string) {
+    this.thumb = thumb;
   }
 }

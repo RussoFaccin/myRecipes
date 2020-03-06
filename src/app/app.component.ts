@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 // Models
-import { Categories, Recipe } from "./models/recipe.model";
+import { Categories, Recipe } from './models/recipe.model';
 
 @Component({
   selector: 'app-root',

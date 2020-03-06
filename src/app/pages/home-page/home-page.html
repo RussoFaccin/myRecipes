@@ -6,9 +6,9 @@
       <span class="mrcpIcons mrcpInput__icon mrcpIcons__icon-search"></span>
     </div>
     <recipe-list [recipes]="recipeService.filteredRecipes"></recipe-list>
-    <new-recipe-dialog
+    <app-new-recipe-dialog
       *ngIf="recipeService.recipes.length == 0"
-    ></new-recipe-dialog>
+    ></app-new-recipe-dialog>
   </div>
   <app-drawer [opened]="false" (selected)="onSelectCategory($event)" #appDrawer></app-drawer>
 </section>

@@ -12,13 +12,13 @@ export class AppDrawerComponent implements OnInit, AfterViewInit {
   @Input() opened: boolean;
   @Output() selected = new EventEmitter<number>();
   categories: any[];
-  openClass: string = '';
+  openClass = '';
   ngOnInit() {
-    let computedCategories = [];
+    const computedCategories = [];
 
-    for (let entry in Categories) {
+    for (const entry in Categories) {
       if (!isNaN(Number(entry) * 1)) {
-        let entryObj = {
+        const entryObj = {
           value: entry,
           label: Categories[entry]
         };
@@ -35,7 +35,7 @@ export class AppDrawerComponent implements OnInit, AfterViewInit {
     } else {
       this.selected.emit(null);
     }
-    
+
     this.opened = false;
   }
   toggleDrawer() {
@@ -43,7 +43,7 @@ export class AppDrawerComponent implements OnInit, AfterViewInit {
   }
   closeDrawer(evt) {
     if (evt.srcElement.querySelector('.m-appDrawer__content')) {
-      this.opened = false
+      this.opened = false;
     }
   }
   openDrawer() {
