@@ -1,5 +1,5 @@
 <section class="m-pageContainer">
-  <app-bar class="mrcpElevation--z2" [isHome]="true" (toggleDrawer)="onToggleDrawer()"></app-bar>
+  <app-bar [isHome]="true" (toggleDrawer)="onToggleDrawer()"></app-bar>
   <div class="m-appContent">
     <div class="mrcpInput__group">
       <input class="mrcpInput__input" type="text" name="fld_search" id="fld_search" (input)="onSearch($event)" placeholder="Search">
