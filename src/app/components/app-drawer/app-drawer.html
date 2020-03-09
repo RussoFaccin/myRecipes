@@ -1,6 +1,6 @@
 <div class="m-appDrawer" [ngClass]="{'--open': opened}" (click)="closeDrawer($event)" #drawerOverlay>
   <nav class="m-appDrawer__content{{openClass}}">
-    <a class="m-appDrawer__item" (click)="onSelectCategory()">Todas Categorias</a>
+    <a class="m-appDrawer__item" (click)="onSelectCategory(0)">Todas Categorias</a>
     <a class="m-appDrawer__item" *ngFor="let category of categories" (click)="onSelectCategory(category)">{{category.label}}</a>
   </nav>
 </div>

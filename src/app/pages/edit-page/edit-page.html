@@ -27,16 +27,16 @@
       <h4 class="headingDivider">Category:</h4>
       <app-select [entries]="entries" [selectedId]="recipe.category" (changed)="changeCategory($event)"></app-select>
     </div>
-    <edit-list
+    <app-edit-list
       title="Ingredients"
       (changed)="updateIng($event)"
       [entries]="recipe.ingredients"
-    ></edit-list>
-    <edit-list
+    ></app-edit-list>
+    <app-edit-list
       title="Instructions"
       (changed)="updateInst($event)"
       [entries]="recipe.instructions"
-    ></edit-list>
+    ></app-edit-list>
     <div class="recipeForm__actionBox">
         <button class="mrcpButton mrcpButton--raised" (click)="onSaveRecipe()">
             Save Recipe

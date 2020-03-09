@@ -11,14 +11,13 @@ import { RippleDirective } from './directives/ripple.directive';
 import { HomePageComponent } from './pages/home-page/home-page';
 import { EditPageComponent } from './pages/edit-page/edit-page';
 import { DetailsPageComponent } from './pages/details-page/details-page';
-import { PatternPageComponent } from './pages/pattern-page/pattern-page.component';
 // Components
 import { AppComponent } from './app.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipeItem } from './components/recipe-item/recipe-item';
 import { AppBarComponent } from './components/app-bar/app-bar';
 import { ListItemComponent } from './components/list-item/list-item.component';
-import { EditList } from './components/edit-list/edit-list.component';
+import { EditListComponent } from './components/edit-list/edit-list.component';
 import { NewRecipeDialogComponent } from './components/new-recipe-dialog/new-recipe-dialog';
 import { AppSelectComponent } from './components/app-select/app-select.component';
 import { AppDrawerComponent } from './components/app-drawer/app-drawer';
@@ -28,10 +27,9 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { CategoryName } from './pipes/category-name.pipe';
 
 const appRoutes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: '', component: HomePageComponent, children: [] },
   { path: 'edit', component: EditPageComponent },
   { path: 'details', component: DetailsPageComponent },
-  {path: 'pattern', component: PatternPageComponent}
 ];
 
 @NgModule({
@@ -54,14 +52,14 @@ const appRoutes: Routes = [
     RecipeItem,
     AppBarComponent,
     ListItemComponent,
-    EditList,
+    EditListComponent,
     NewRecipeDialogComponent,
     AppSelectComponent,
     // Pages
     HomePageComponent,
     EditPageComponent,
     DetailsPageComponent,
-    PatternPageComponent,
+
   ],
   bootstrap: [AppComponent],
   providers: [RecipeService, IdbService]
