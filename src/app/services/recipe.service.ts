@@ -50,7 +50,7 @@ export class RecipeService {
   }
   filterByTitle(title: string) {
     const searchRecipes = this.recipes.filter((recipe, index) => {
-      return recipe.title.indexOf(title) >= 0;
+      return String(recipe.title).toLowerCase().indexOf(String(title).toLowerCase()) >= 0;
     });
 
     this.filteredRecipes = searchRecipes;

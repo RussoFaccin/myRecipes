@@ -4,14 +4,14 @@ import { Directive, ElementRef, AfterViewInit, HostListener, EventEmitter, Outpu
     selector: '[mrcpRipple]'
 })
 export class RippleDirective implements AfterViewInit {
-    @Input() rippleDuration: number = 0.25;
-    @Input() rippleColor: string = "#000";
+    @Input() rippleDuration = 0.25;
+    @Input() rippleColor = '#000';
     @Output() trigger = new EventEmitter<void>();
     @HostListener('click', ['$event'])
     onclick(evt) {
         this.el.nativeElement.classList.add('--active');
 
-        setTimeout(()=> {
+        setTimeout(() => {
             this.el.nativeElement.classList.remove('--active');
             this.trigger.emit();
         }, (this.rippleDuration * 1000));
@@ -19,7 +19,7 @@ export class RippleDirective implements AfterViewInit {
     constructor(private el: ElementRef) {
         /* ===== Styles ===== */
         // let styleTag = document.createElement('style');
-        let rippleStyle = `
+        const rippleStyle = `
         /*
         | ==================================================
         |   Ripple
@@ -72,9 +72,9 @@ export class RippleDirective implements AfterViewInit {
         this.el.nativeElement.classList.add('mrcpRipple');
     }
     ngAfterViewInit() {
-        let element = this.el.nativeElement;
-        
-        let rippleSize = (element.offsetWidth > element.offsetHeight ? element.offsetWidth : element.offsetHeight) * 1.5;
+        const element = this.el.nativeElement;
+
+        const rippleSize = (element.offsetWidth > element.offsetHeight ? element.offsetWidth : element.offsetHeight) * 1.5;
 
         element.style = `
           --rippleSize: ${rippleSize}px;

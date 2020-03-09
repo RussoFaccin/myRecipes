@@ -5,7 +5,7 @@
       <input class="mrcpInput__input" type="text" name="fld_search" id="fld_search" (input)="onSearch($event)" placeholder="Search">
       <span class="mrcpIcons mrcpInput__icon mrcpIcons__icon-search"></span>
     </div>
-    <recipe-list [recipes]="recipeService.filteredRecipes"></recipe-list>
+    <app-recipe-list *ngIf="recipeService.recipes.length > 0" [recipes]="recipeService.filteredRecipes"></app-recipe-list>
     <app-new-recipe-dialog
       *ngIf="recipeService.recipes.length == 0"
     ></app-new-recipe-dialog>

@@ -14,7 +14,7 @@ import { DetailsPageComponent } from './pages/details-page/details-page';
 import { PatternPageComponent } from './pages/pattern-page/pattern-page.component';
 // Components
 import { AppComponent } from './app.component';
-import { RecipeList } from './components/recipe-list/recipe-list.component';
+import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipeItem } from './components/recipe-item/recipe-item';
 import { AppBarComponent } from './components/app-bar/app-bar';
 import { ListItemComponent } from './components/list-item/list-item.component';
@@ -50,7 +50,7 @@ const appRoutes: Routes = [
     // Components
     AppComponent,
     AppDrawerComponent,
-    RecipeList,
+    RecipeListComponent,
     RecipeItem,
     AppBarComponent,
     ListItemComponent,

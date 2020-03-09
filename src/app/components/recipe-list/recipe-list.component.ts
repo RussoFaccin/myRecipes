@@ -1,14 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-//Models
+import { Component, Input } from '@angular/core';
+// Models
 import { Categories, Recipe } from '../../models/recipe.model';
 
 @Component({
-   selector: 'recipe-list',
+   selector: 'app-recipe-list',
    templateUrl: './recipe-list.component.html',
    styleUrls: ['./recipe-list.component.css']
 })
-export class RecipeList {
+export class RecipeListComponent {
   @Input() recipes: any[];
   constructor() {}
-  ngOnInit() {}
 }
