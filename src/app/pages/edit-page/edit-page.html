@@ -2,46 +2,75 @@
   <app-bar [isHome]="false"></app-bar>
   <div class="m-appContent">
     <div class="m-recipeForm">
-      <div class="mrcpInput__group">
-        <input class="mrcpInput__input" type="text" [(ngModel)]="recipe.title" name="fld_title" placeholder="Title"/>
-      </div>
-      <h4 class="headingDivider">Thumbnail:</h4>
-      <div class="m-recipeThumb" #recipeThumb>
-        <video [ngClass]="{'--active': isStreaming}" class="m-videoStream" poster="{{recipe.thumb}}" width="300" height="300" autoplay #video></video>
-        <img src="{{recipe.thumb}}" alt="" class="m-recipeThumb__pic" />
-        <button *ngIf="!isStreaming" class="m-recipeThumb__addNewButton" (trigger)="addNewThumb()" aria-label="Add new thumbnail" mrcpRipple>
-          <span class="u-sr-only">Add new thumbnail</span>
-        </button>
-        <div class="m-recipeThumb__thirds" [ngClass]="{'--active': isStreaming}" #thirds>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-        </div>
-      </div>
-      <h4 class="headingDivider">Category:</h4>
-      <app-select [entries]="entries" [selectedId]="recipe.category" (changed)="changeCategory($event)"></app-select>
-      <app-edit-list
-        title="Ingredients"
-        (changed)="updateIng($event)"
-        [entries]="recipe.ingredients"
-      ></app-edit-list>
-    <app-edit-list
-      title="Instructions"
-      (changed)="updateInst($event)"
-      [entries]="recipe.instructions"
-    ></app-edit-list>
-    <div class="recipeForm__actionBox">
-        <button class="mrcpButton mrcpButton--raised" (click)="onSaveRecipe()">
-            Save Recipe
-          </button>
-          <button class="mrcpButton mrcpButton--raised" (click)="onCancel()">Cancel</button>
-    </div>
+      3:37:31 PM: Build ready to start
+3:37:33 PM: build-image version: 2dbd444fcdce00cf06325060a8238d5ae3e86774
+3:37:33 PM: build-image tag: v3.3.7
+3:37:33 PM: buildbot version: bd31cf433d2d899021d41733f271c39fdf2f8880
+3:37:34 PM: Fetching cached dependencies
+3:37:34 PM: Starting to download cache of 158.9MB
+3:37:34 PM: Finished downloading cache in 809.326029ms
+3:37:34 PM: Starting to extract cache
+3:37:42 PM: Finished extracting cache in 8.027947963s
+3:37:42 PM: Finished fetching cache in 8.904210619s
+3:37:42 PM: Starting to prepare the repo for build
+3:37:43 PM: Preparing Git Reference refs/heads/master
+3:37:44 PM: Starting build script
+3:37:44 PM: Installing dependencies
+3:37:44 PM: Started restoring cached node version
+3:37:48 PM: Finished restoring cached node version
+3:37:49 PM: v10.19.0 is already installed.
+3:37:50 PM: Now using node v10.19.0 (npm v6.13.4)
+3:37:50 PM: Attempting ruby version 2.6.2, read from environment
+3:37:51 PM: Using ruby version 2.6.2
+3:37:52 PM: Using PHP version 5.6
+3:37:52 PM: Started restoring cached node modules
+3:37:52 PM: Finished restoring cached node modules
+3:37:52 PM: Started restoring cached go cache
+3:37:52 PM: Finished restoring cached go cache
+3:37:52 PM: unset GOOS;
+3:37:52 PM: unset GOARCH;
+3:37:52 PM: export GOROOT='/opt/buildhome/.gimme/versions/go1.12.linux.amd64';
+3:37:52 PM: export PATH="/opt/buildhome/.gimme/versions/go1.12.linux.amd64/bin:${PATH}";
+3:37:52 PM: go version >&2;
+3:37:52 PM: export GIMME_ENV='/opt/buildhome/.gimme/env/go1.12.linux.amd64.env';
+3:37:52 PM: go version go1.12 linux/amd64
+3:37:52 PM: Installing missing commands
+3:37:52 PM: Verify run directory
+3:37:53 PM: Executing user command: ng build --prod --aot --buildOptimizer
+3:37:56 PM: Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+3:38:35 PM: chunk {0} runtime-es2015.24b02acc1f369d9b9f37.js (runtime) 2.83 kB [entry] [rendered]
+3:38:35 PM: chunk {1} main-es2015.469bc0abe12ea8f6644a.js (main) 538 kB [initial] [rendered]
+3:38:35 PM: chunk {2} polyfills-es2015.fd917e7c3ed57f282ee5.js (polyfills) 64.3 kB [initial] [rendered]
+3:38:35 PM: chunk {3} polyfills-es5-es2015.3aa54d3e5134f5b5b842.js (polyfills-es5) 223 kB [initial] [rendered]
+3:38:35 PM: chunk {4} styles.460248088905894ed956.css (styles) 2.62 kB [initial] [rendered]
+3:38:35 PM: Date: 2020-04-02T18:38:35.117Z - Hash: f4fe609741a379e7c4ac - Time: 38414ms
+3:38:35 PM: Generating ES5 bundles for differential loading...
+3:38:35 PM: Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+3:38:50 PM: ES5 bundle generation complete.
+3:38:50 PM: Skipping functions preparation step: no functions directory set
+3:38:50 PM: Caching artifacts
+3:38:50 PM: Started saving node modules
+3:38:50 PM: Finished saving node modules
+3:38:50 PM: Started saving pip cache
+3:38:51 PM: Finished saving pip cache
+3:38:51 PM: Started saving emacs cask dependencies
+3:38:51 PM: Finished saving emacs cask dependencies
+3:38:51 PM: Started saving maven dependencies
+3:38:51 PM: Finished saving maven dependencies
+3:38:51 PM: Started saving boot dependencies
+3:38:51 PM: Finished saving boot dependencies
+3:38:51 PM: Started saving go dependencies
+3:38:51 PM: Finished saving go dependencies
+3:38:51 PM: Build script success
+3:38:51 PM: Starting to deploy site from 'dist/myrecipes'
+3:38:51 PM: Creating deploy tree 
+3:38:51 PM: Creating deploy upload records
+3:38:51 PM: 4 new files to upload
+3:38:51 PM: 0 new functions to upload
+3:38:51 PM: Starting post processing
+3:38:51 PM: Post processing done
+3:38:52 PM: Site is live
+3:39:22 PM: Finished processing build request in 1m48.203510347s
     </div>
   </div>
 </section>
