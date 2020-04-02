@@ -113,13 +113,10 @@ body {
 
 .m-appContent {
   display: block;
-  position: relative;
   overflow: hidden auto;
-  -webkit-overflow-scrolling: touch;
   flex: 1;
   padding: 15px;
   padding-bottom: 0;
-  transform: translate3d(0, 0, 0);
 }
 
 .m-pageContainer {
@@ -131,7 +128,6 @@ body {
 }
 
 .mrcpInput__group {
-  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
