@@ -1,7 +1,7 @@
 .m-recipeForm {
   width: 100%;
   height: auto;
-  overflow: auto;
+  overflow: initial;
 }
 
 .recipeForm__actionBox button:not(:last-of-type) {
