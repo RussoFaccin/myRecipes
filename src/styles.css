@@ -115,6 +115,7 @@ body {
   display: block;
   position: relative;
   overflow: hidden auto;
+  -webkit-overflow-scrolling: touch;
   flex: 1;
   padding: 15px;
   padding-bottom: 0;
