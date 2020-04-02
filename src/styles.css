@@ -119,6 +119,7 @@ body {
   flex: 1;
   padding: 15px;
   padding-bottom: 0;
+  transform: translate3d(0, 0, 0);
 }
 
 .m-pageContainer {
