@@ -71,6 +71,7 @@
   --secondaryColor: #158000;
   --accentColor: #e60013;
   --primaryFont: sans-serif;
+  --headerSize: 56px;
 }
 
 /*
@@ -82,6 +83,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 * {
+  position: relative;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
