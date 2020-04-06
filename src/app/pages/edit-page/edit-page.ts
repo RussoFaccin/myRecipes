@@ -18,6 +18,7 @@ import { ReadVarExpr } from '@angular/compiler';
   styleUrls: ['./edit-page.css']
 })
 export class EditPageComponent implements AfterViewInit, OnInit {
+  @ViewChild('fileInput', {static: true}) fileInput;
   recipe: Recipe;
   @ViewChild('recipeThumb', { read: ElementRef, static: false })
   recipeThumb: any;
@@ -35,39 +36,26 @@ export class EditPageComponent implements AfterViewInit, OnInit {
       // this.recipe = this.recipeService.selectedRecipe;
     }
   }
-  ngAfterViewInit() {
-    this.video = this.video.nativeElement;
-  }
+  ngAfterViewInit() {}
   ngOnInit() {}
   addNewThumb() {
-    const fileInput = document.createElement('input');
-    fileInput.setAttribute('type', 'file');
-    fileInput.setAttribute('accept', 'image/*');
-    
-    fileInput.addEventListener('change', (evt) => {
-      const imgSrc = fileInput.files[0];
-      const reader = new FileReader();
-      
-      reader.readAsDataURL(imgSrc)
-      reader.addEventListener('load', (evt) => {
-        this.recipe.updateThumb(reader.result as string);
-        // alert(reader.result);
-        // this.recipe.updateThumb(reader.result as string);
-        // this.isStreaming = false;
-      });
-    });
-    fileInput.click();
+    console.log('addNewThumb');
+    this.fileInput.nativeElement.click();
   }
-  takePicture() {
-    // Canvas
-    const canvas = document.createElement('canvas');
-    canvas.setAttribute('width', '300');
-    canvas.setAttribute('height', '300');
-    const context = canvas.getContext('2d');
-    context.drawImage(this.video, 0, 0, 300, 300);
-    const thumb: string = canvas.toDataURL();
-    this.recipe.updateThumb(thumb);
-    this.isStreaming = false;
+  choosePicture(evt) {
+    const pic = evt.target.files[0];
+
+    const reader = new FileReader();
+
+    reader.addEventListener("load", evt => {
+      console.log("RESULT", evt.target.result);
+      const img = new Image();
+      img.src = evt.target.result as string; // File contents here
+
+      this.recipe.updateThumb(evt.target.result as string);
+    });
+
+    reader.readAsDataURL(pic);
   }
   updateIng(ingredients: string[]) {
     this.recipe.ingredients = ingredients;

@@ -7,22 +7,18 @@
       </div>
       <h4 class="headingDivider">Thumbnail:</h4>
       <div class="m-recipeThumb" #recipeThumb>
-        <video [ngClass]="{'--active': isStreaming}" class="m-videoStream" poster="{{recipe.thumb}}" width="300" height="300" autoplay #video></video>
-        <img src="{{recipe.thumb}}" alt="" class="m-recipeThumb__pic" />
+        <img [src]="recipe.thumb" (click)="addNewThumb()" alt="" class="m-recipeThumb__pic" />
         <button *ngIf="!isStreaming" class="m-recipeThumb__addNewButton" (trigger)="addNewThumb()" aria-label="Add new thumbnail" mrcpRipple>
           <span class="u-sr-only">Add new thumbnail</span>
         </button>
-        <div class="m-recipeThumb__thirds" [ngClass]="{'--active': isStreaming}" #thirds>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-          <div class="m-recipeThumb__thirdsCell"></div>
-        </div>
+        <input
+          type="file"
+          id="upload-file"
+          multiple
+          (change)="choosePicture($event)"
+          #fileInput
+          hidden
+        />
       </div>
       <h4 class="headingDivider">Category:</h4>
       <app-select [entries]="entries" [selectedId]="recipe.category" (changed)="changeCategory($event)"></app-select>
