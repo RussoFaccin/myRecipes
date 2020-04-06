@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { RecipeService } from '../../services/recipe.service';
 // Models
 import { Recipe, Categories } from '../../models/recipe.model';
+import { ReadVarExpr } from '@angular/compiler';
 
 @Component({
   selector: 'app-edit-page',
@@ -42,6 +43,17 @@ export class EditPageComponent implements AfterViewInit, OnInit {
     const fileInput = document.createElement('input');
     fileInput.setAttribute('type', 'file');
     fileInput.setAttribute('accept', 'image/*');
+    
+    fileInput.addEventListener('change', (evt) => {
+      const imgSrc = fileInput.files[0];
+      const reader = new FileReader();
+      
+      reader.readAsDataURL(imgSrc)
+      reader.addEventListener('load', (evt) => {
+        this.recipe.updateThumb(reader.result as string);
+        this.isStreaming = false;
+      });
+    });
     fileInput.click();
   }
   takePicture() {
