@@ -39,33 +39,10 @@ export class EditPageComponent implements AfterViewInit, OnInit {
   }
   ngOnInit() {}
   addNewThumb() {
-    if ('mediaDevices' in navigator) {
-      // Camera
-      const constraints = {
-        video: {
-          facingMode: 'environment',
-          aspectRatio: 1,
-          width: 300,
-          height: 300
-        }
-      };
-
-      navigator.mediaDevices.getUserMedia(constraints).then(stream => {
-        this.isStreaming = true;
-        this.video.srcObject = stream;
-        this.thirds.nativeElement.addEventListener('click', () => {
-          this.takePicture();
-          const track = stream.getVideoTracks()[0];
-          track.stop();
-        });
-      });
-    } else {
-      const fileInput = document.createElement('input');
-      fileInput.setAttribute('type', 'file');
-      fileInput.setAttribute('accept', 'image/*');
-      fileInput.setAttribute('capture', 'environment');
-      fileInput.click();
-    }
+    const fileInput = document.createElement('input');
+    fileInput.setAttribute('type', 'file');
+    fileInput.setAttribute('accept', 'image/*');
+    fileInput.click();
   }
   takePicture() {
     // Canvas
