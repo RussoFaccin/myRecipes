@@ -48,11 +48,10 @@ export class EditPageComponent implements AfterViewInit, OnInit {
     const reader = new FileReader();
 
     reader.addEventListener("load", evt => {
-      console.log("RESULT", evt.target.result);
       const img = new Image();
-      img.src = evt.target.result as string; // File contents here
+      img.src = reader.result as string; // File contents here
 
-      this.recipe.updateThumb(evt.target.result as string);
+      this.recipe.updateThumb(reader.result as string);
     });
 
     reader.readAsDataURL(pic);
