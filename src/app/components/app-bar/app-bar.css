@@ -20,8 +20,8 @@
 }
 
 .a-appBarAction {
-  width: 46px;
-  height: 46px;
+  width: var(--headerSize);
+  height: var(--headerSize);
   border: 0;
   background-color: transparent;
   color: var(--accentColor);
