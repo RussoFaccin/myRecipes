@@ -50,9 +50,10 @@ export class EditPageComponent implements AfterViewInit, OnInit {
       
       reader.readAsDataURL(imgSrc)
       reader.addEventListener('load', (evt) => {
-        alert(reader.result);
         this.recipe.updateThumb(reader.result as string);
-        this.isStreaming = false;
+        // alert(reader.result);
+        // this.recipe.updateThumb(reader.result as string);
+        // this.isStreaming = false;
       });
     });
     fileInput.click();
