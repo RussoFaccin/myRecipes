@@ -6,10 +6,11 @@
 .m-editList__header {
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color:var(--primaryColor);
   height: var(--headerHeight);
   border-radius: calc(var(--headerHeight) / 2);
   overflow: hidden;
+  margin-bottom: 4vmin;
 }
 
 .m-editList__heading {

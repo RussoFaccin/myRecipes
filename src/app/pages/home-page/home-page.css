@@ -1,0 +1,6 @@
+.m-appContent--homePage {
+    padding-top: 22vmin;
+    background-image: url('/assets/img/Background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}

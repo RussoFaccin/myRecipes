@@ -1,9 +1,13 @@
 <div class="m-recipeItem mrcpElevation--z1" (trigger)="selectAndNavigate(recipe, 'details')" mrcpRipple>
+  <h3 class="m-recipeItem__title">{{recipe.title}}</h3>
   <img class="a-recipeThumb" src="{{recipe.thumb}}" />
-  <div class="m-recipeItem__infoBox">
-    <h1 class="m-recipeItem__title">{{recipe.title}}</h1>
     <p>{{recipe.category | categoryName}}</p>
-    <button class="mrcpButton mrcpButton--outlined" (click)="selectAndNavigate(recipe, 'edit')">edit</button>
-    <button class="mrcpButton mrcpButton--outlined" (click)="deleteRecipe(recipe.id, $event)">delete</button>
-  </div>
+    <button class="m-recipeItem__action actionEdit" (click)="selectAndNavigate(recipe, 'edit')">
+      <span class="u-sr-only">Edit recipe</span>
+      <img src="/assets/img/EditButton.svg" alt="" class="actionImage">
+    </button>
+    <button class="m-recipeItem__action actionDelete" (click)="deleteRecipe(recipe.id, $event)">
+      <span class="u-sr-only">Delete recipe</span>
+      <img src="/assets/img/DeleteButton.svg" alt="" class="actionImage">
+    </button>
 </div>

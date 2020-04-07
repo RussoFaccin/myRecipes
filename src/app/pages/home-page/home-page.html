@@ -1,14 +1,21 @@
 <section class="m-pageContainer">
-  <app-bar [isHome]="true" (toggleDrawer)="onToggleDrawer()"></app-bar>
-  <div class="m-appContent">
-    <div class="mrcpInput__group">
-      <input class="mrcpInput__input" type="text" name="fld_search" id="fld_search" (input)="onSearch($event)" placeholder="Search">
-      <span class="mrcpIcons mrcpInput__icon mrcpIcons__icon-search"></span>
-    </div>
-    <app-recipe-list *ngIf="recipeService.recipes.length > 0" [recipes]="recipeService.filteredRecipes"></app-recipe-list>
+  <div class="m-appContent m-appContent--homePage">
     <app-new-recipe-dialog
       *ngIf="recipeService.recipes.length == 0"
     ></app-new-recipe-dialog>
+    <div class="appTools" *ngIf="recipeService.recipes.length > 0">
+      <button (click)="onToggleDrawer()" class="toolButton">
+        <img class="toolButton__imageContent" src="/assets/img/Filter Button.svg" alt="">
+      </button>
+      <div class="mrcpInput__group appTools__group">
+        <input class="appTools__input" type="text" name="fld_search" id="fld_search" (input)="onSearch($event)" placeholder="Search">
+        <span class="mrcpIcons mrcpInput__icon mrcpIcons__icon-search"></span>
+      </div>
+      <button class="toolButton" (click)="onAddRecipe()">
+        <img class="toolButton__imageContent" src="/assets/img/AddButton.svg" alt="">
+      </button>
+    </div>
+    <app-recipe-list *ngIf="recipeService.recipes.length > 0" [recipes]="recipeService.filteredRecipes"></app-recipe-list>
   </div>
   <app-drawer [opened]="false" (selected)="onSelectCategory($event)" #appDrawer></app-drawer>
 </section>

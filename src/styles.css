@@ -1,3 +1,8 @@
+/* Font Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* Reboot */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-reboot@4.3.1/reboot.css');
+
 /*
 | ================================================================================
 | Icon font
@@ -67,7 +72,7 @@
 */
 
 :root {
-  --primaryColor: #ff6e00;
+  --primaryColor: #F26119;
   --secondaryColor: #158000;
   --accentColor: #e60013;
   --primaryFont: sans-serif;
@@ -79,8 +84,6 @@
 | Globals
 | ================================================================================
 */
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 * {
   position: relative;
@@ -103,7 +106,15 @@ html {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  -webkit-appearance: none;
+}
+
+input:focus {
+  outline: 0;
 }
 
 .mrcpSimpleButton {
@@ -124,16 +135,16 @@ body {
 */
 
 .m-appContent {
-  height: calc(100vh - 46px);
+  height: 100%;
   overflow: auto;
-  padding: 15px;
-  padding-bottom: 0;
+  padding: 5vmin;
 }
 
 .m-pageContainer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  height: 100%;
 }
 
 .mrcpInput__group {
@@ -149,7 +160,8 @@ body {
   background-color: transparent;
   padding-left: 10px;
   height: 40px;
-  box-shadow: 1px 1px 3px inset rgba(0, 0, 0, 0.5);
+  -webkit-appearance: none;
+  box-shadow: inset 1px 1px 3px 0px rgba(0, 0, 0, 0.75);
   border-radius: 20px;
 }
 
@@ -171,6 +183,39 @@ body {
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
+}
+
+.appTools {
+  display: flex;
+  position: fixed;
+  top: 5vmin;
+  z-index: 2;
+}
+
+.appTools__input {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: 25px;
+  background-color: var(--primaryColor);
+  padding: 0 20px;
+}
+
+.appTools__group {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.toolButton {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 0;
+}
+
+.toolButton__imageContent {
+  width: 100%;
+  height: auto;
 }
 
 /*

@@ -15,7 +15,6 @@ import { DetailsPageComponent } from './pages/details-page/details-page';
 import { AppComponent } from './app.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipeItem } from './components/recipe-item/recipe-item';
-import { AppBarComponent } from './components/app-bar/app-bar';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { EditListComponent } from './components/edit-list/edit-list.component';
 import { NewRecipeDialogComponent } from './components/new-recipe-dialog/new-recipe-dialog';
@@ -50,7 +49,6 @@ const appRoutes: Routes = [
     AppDrawerComponent,
     RecipeListComponent,
     RecipeItem,
-    AppBarComponent,
     ListItemComponent,
     EditListComponent,
     NewRecipeDialogComponent,

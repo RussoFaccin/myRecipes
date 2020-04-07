@@ -5,7 +5,6 @@
 .m-recipeList {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
 }
 
 @media screen and (orientation:landscape){

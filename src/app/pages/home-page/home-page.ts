@@ -1,6 +1,9 @@
 import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 // Services
 import { RecipeService } from '../../services/recipe.service';
+//Models
+import { Recipe } from '../../models/recipe.model';
 
 @Component({
   selector: 'app-home-page',
@@ -10,7 +13,7 @@ import { RecipeService } from '../../services/recipe.service';
 export class HomePageComponent implements AfterViewInit {
   @ViewChild('appDrawer', {static: true})
   appDrawer: any;
-  constructor(public recipeService: RecipeService) {
+  constructor(public recipeService: RecipeService, private router: Router) {
   }
   ngAfterViewInit() {}
   onSearch(evt) {
@@ -21,5 +24,9 @@ export class HomePageComponent implements AfterViewInit {
   }
   onToggleDrawer() {
     this.appDrawer.toggleDrawer();
+  }
+  onAddRecipe() {
+    this.recipeService.selectedRecipe = null;
+    this.router.navigate(['edit']);
   }
 }

@@ -4,8 +4,16 @@
   overflow: auto;
 }
 
+.recipeForm__actionBox {
+  margin-top: 5vmin;
+}
+
 .recipeForm__actionBox button:not(:last-of-type) {
   margin-right: 10px;
+}
+
+.formSection {
+  margin-bottom: 10vmin;
 }
 
 .m-recipeThumb {

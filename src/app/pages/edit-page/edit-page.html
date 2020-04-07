@@ -1,37 +1,46 @@
-<section class="m-pageContainer">
-  <app-bar [isHome]="false"></app-bar>
+<section class="m-pageContainer m-pageContainer--edit">
   <div class="m-appContent">
     <div class="m-recipeForm">
-      <div class="mrcpInput__group">
-        <input class="mrcpInput__input" type="text" [(ngModel)]="recipe.title" name="fld_title" placeholder="Title"/>
+      <div class="formSection">
+        <div class="mrcpInput__group">
+          <input class="mrcpInput__input" type="text" [(ngModel)]="recipe.title" name="fld_title" placeholder="Title"/>
+        </div>
       </div>
-      <h4 class="headingDivider">Thumbnail:</h4>
-      <div class="m-recipeThumb" #recipeThumb>
-        <img [src]="recipe.thumb" (click)="addNewThumb()" alt="" class="m-recipeThumb__pic" />
-        <button *ngIf="!isStreaming" class="m-recipeThumb__addNewButton" (trigger)="addNewThumb()" aria-label="Add new thumbnail" mrcpRipple>
-          <span class="u-sr-only">Add new thumbnail</span>
-        </button>
-        <input
-          type="file"
-          id="upload-file"
-          multiple
-          (change)="choosePicture($event)"
-          #fileInput
-          hidden
-        />
+      <div class="formSection">
+        <h4 class="headingDivider">Thumbnail:</h4>
+        <div class="m-recipeThumb" #recipeThumb>
+          <img [src]="recipe.thumb" (click)="addNewThumb()" alt="" class="m-recipeThumb__pic" />
+          <button *ngIf="!isStreaming" class="m-recipeThumb__addNewButton" (trigger)="addNewThumb()" aria-label="Add new thumbnail" mrcpRipple>
+            <span class="u-sr-only">Add new thumbnail</span>
+          </button>
+          <input
+            type="file"
+            id="upload-file"
+            multiple
+            (change)="choosePicture($event)"
+            #fileInput
+            hidden
+          />
+        </div>
       </div>
-      <h4 class="headingDivider">Category:</h4>
-      <app-select [entries]="entries" [selectedId]="recipe.category" (changed)="changeCategory($event)"></app-select>
-      <app-edit-list
-        title="Ingredients"
-        (changed)="updateIng($event)"
-        [entries]="recipe.ingredients"
-      ></app-edit-list>
-      <app-edit-list
-        title="Instructions"
-        (changed)="updateInst($event)"
-        [entries]="recipe.instructions"
-      ></app-edit-list>
+      <div class="formSection">
+        <h4 class="headingDivider">Category:</h4>
+        <app-select [entries]="entries" [selectedId]="recipe.category" (changed)="changeCategory($event)"></app-select>
+      </div>
+      <div class="formSection">
+        <app-edit-list
+          title="Ingredients"
+          (changed)="updateIng($event)"
+          [entries]="recipe.ingredients"
+        ></app-edit-list>
+      </div>
+      <div class="formSection">
+        <app-edit-list
+          title="Instructions"
+          (changed)="updateInst($event)"
+          [entries]="recipe.instructions"
+        ></app-edit-list>
+      </div>
       <div class="recipeForm__actionBox">
         <button class="mrcpButton mrcpButton--raised" (click)="onSaveRecipe()">
             Save Recipe

@@ -10,8 +10,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #EEE;
   width: 100%;
   height: 100%;
   cursor: default;
+}
+
+.newRecipeButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85vmin;
+  background-image: url('/assets/img/bgCard.jpg');
+  padding: 6.66vmin;
+  border-radius: 5.6vmin;
+}
+
+.newRecipeButton__icon {
+  margin-top: 10.4vmin;
+}
+
+.newRecipeButton h4 {
+  font-size: 5.4vmin;
+}
+
+.newRecipeButton h3 {
+  font-size: 8vw;
 }

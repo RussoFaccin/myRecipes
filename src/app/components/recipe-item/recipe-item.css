@@ -1,14 +1,36 @@
 .m-recipeItem {
-  border-radius: 8px;
+  border-radius: 21px;
   background-color: #FFF;
   overflow: hidden;
   flex-direction: column;
   align-items: center;
+  padding: 15px;
 }
 
 .m-recipeItem__infoBox {
   width: 100%;
   padding: 10px;
+}
+
+.m-recipeItem__title {
+  margin-bottom: 5vmin;
+}
+
+.m-recipeItem__action {
+  position: absolute;
+  border: 0;
+  background-color: transparent;
+  margin: 10px;
+}
+
+.actionDelete {
+  top: 0;
+  right: 0;
+}
+
+.actionEdit {
+  bottom: 0;
+  right: 0;
 }
 
 :host:not(:last-of-type) {
