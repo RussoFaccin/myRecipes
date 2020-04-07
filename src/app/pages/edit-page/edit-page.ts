@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { RecipeService } from '../../services/recipe.service';
 // Models
 import { Recipe, Categories } from '../../models/recipe.model';
+import { ReadVarExpr } from '@angular/compiler';
 
 @Component({
   selector: 'app-edit-page',
@@ -17,6 +18,7 @@ import { Recipe, Categories } from '../../models/recipe.model';
   styleUrls: ['./edit-page.css']
 })
 export class EditPageComponent implements AfterViewInit, OnInit {
+  @ViewChild('fileInput', {static: true}) fileInput;
   recipe: Recipe;
   @ViewChild('recipeThumb', { read: ElementRef, static: false })
   recipeThumb: any;
@@ -34,49 +36,25 @@ export class EditPageComponent implements AfterViewInit, OnInit {
       // this.recipe = this.recipeService.selectedRecipe;
     }
   }
-  ngAfterViewInit() {
-    this.video = this.video.nativeElement;
-  }
+  ngAfterViewInit() {}
   ngOnInit() {}
   addNewThumb() {
-    if ('mediaDevices' in navigator) {
-      // Camera
-      const constraints = {
-        video: {
-          facingMode: 'environment',
-          aspectRatio: 1,
-          width: 300,
-          height: 300
-        }
-      };
-
-      navigator.mediaDevices.getUserMedia(constraints).then(stream => {
-        this.isStreaming = true;
-        this.video.srcObject = stream;
-        this.thirds.nativeElement.addEventListener('click', () => {
-          this.takePicture();
-          const track = stream.getVideoTracks()[0];
-          track.stop();
-        });
-      });
-    } else {
-      const fileInput = document.createElement('input');
-      fileInput.setAttribute('type', 'file');
-      fileInput.setAttribute('accept', 'image/*');
-      fileInput.setAttribute('capture', 'environment');
-      fileInput.click();
-    }
+    console.log('addNewThumb');
+    this.fileInput.nativeElement.click();
   }
-  takePicture() {
-    // Canvas
-    const canvas = document.createElement('canvas');
-    canvas.setAttribute('width', '300');
-    canvas.setAttribute('height', '300');
-    const context = canvas.getContext('2d');
-    context.drawImage(this.video, 0, 0, 300, 300);
-    const thumb: string = canvas.toDataURL();
-    this.recipe.updateThumb(thumb);
-    this.isStreaming = false;
+  choosePicture(evt) {
+    const pic = evt.target.files[0];
+
+    const reader = new FileReader();
+
+    reader.addEventListener("load", evt => {
+      const img = new Image();
+      img.src = reader.result as string; // File contents here
+
+      this.recipe.updateThumb(reader.result as string);
+    });
+
+    reader.readAsDataURL(pic);
   }
   updateIng(ingredients: string[]) {
     this.recipe.ingredients = ingredients;
