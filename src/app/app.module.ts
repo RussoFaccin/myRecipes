@@ -24,6 +24,8 @@ import { AppDrawerComponent } from './components/app-drawer/app-drawer';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 // Pipoes
 import { CategoryName } from './pipes/category-name.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent, children: [] },
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: false })
+    RouterModule.forRoot(appRoutes, { enableTracing: false }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   declarations: [
     // Pipes

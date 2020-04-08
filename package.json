@@ -11,11 +11,12 @@
   "scripts": {
     "ng": "ng",
     "dev": "ng serve",
-    "build": "ng build --prod --aot --buildOptimizer",
+    "build": "ng build --prod",
+    "build:min": "ng build --prod --aot --buildOptimizer",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "serve": "lite-server --baseDir=dist/myrecipes"
+    "serve": "http-server -p 8080 -c-1 dist/myrecipes"
   },
   "private": true,
   "dependencies": {
@@ -26,7 +27,9 @@
     "@angular/forms": "~8.2.4",
     "@angular/platform-browser": "~8.2.4",
     "@angular/platform-browser-dynamic": "~8.2.4",
+    "@angular/pwa": "^0.901.0",
     "@angular/router": "~8.2.4",
+    "@angular/service-worker": "~8.2.4",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
@@ -40,6 +43,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "http-server": "^0.12.1",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -47,7 +51,6 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
-    "lite-server": "^2.5.4",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
