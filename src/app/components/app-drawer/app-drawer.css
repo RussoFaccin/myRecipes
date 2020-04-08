@@ -23,13 +23,14 @@
 
 .m-appDrawer__content {
   display: inline-block;
-  height: 100%;
+  height: calc(100% - 22vmin);
   background-color: var(--primaryColor);
   transform: translateX(-100%);
   transition: all var(--animationTime) ease-out;
   margin-top: 22vmin;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
+  overflow: hidden auto;
 }
 
 .--open .m-appDrawer__content {
@@ -39,6 +40,7 @@
 .m-appDrawer__item {
   display: block;
   width: 100%;
+  line-height: 50px;
   border: 0;
   padding: 5px 10px;
   background-color: transparent;

@@ -117,6 +117,10 @@ input:focus {
   outline: 0;
 }
 
+button:focus {
+  outline: 0;
+}
+
 .mrcpSimpleButton {
   border: 0;
   border-radius: 5px;
@@ -186,10 +190,14 @@ input:focus {
 }
 
 .appTools {
+  width: 100%;
   display: flex;
+  justify-content: center;
   position: fixed;
   top: 5vmin;
+  left: 0;
   z-index: 2;
+  padding: 0 10px;
 }
 
 .appTools__input {
@@ -204,6 +212,7 @@ input:focus {
 .appTools__group {
   flex: 1;
   margin: 0 10px;
+  max-width: 596px;
 }
 
 .toolButton {
@@ -229,15 +238,14 @@ input:focus {
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--secondaryColor);
   text-transform: uppercase;
   font-family: inherit;
   font-weight: bolder;
   border: 0;
-  background-color: transparent;
+  background-color: #C4C4C4;
   padding: 5px 10px;
-  border-radius: 8px;
-  height: 36px;
+  border-radius: 23px;
+  height: 45px;
 }
 
 .mrcpButton__label {
@@ -253,8 +261,8 @@ input:focus {
 /* ===== Raised Button ===== */
 
 .mrcpButton--raised {
-  color: #FFF;
-  background-color: var(--secondaryColor);
+  color: #000;
+  /* background-color: var(--secondaryColor); */
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 

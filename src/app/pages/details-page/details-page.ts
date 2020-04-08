@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 // Models
 import { Categories, Recipe } from '../../models/recipe.model';
 // Services
@@ -11,7 +12,13 @@ import { RecipeService } from '../../services/recipe.service';
 })
 export class DetailsPageComponent {
   selectedRecipe: Recipe;
-  constructor(private recipeService: RecipeService) {
+  constructor(
+    private recipeService: RecipeService,
+    private router: Router
+  ) {
     this.selectedRecipe = this.recipeService.selectedRecipe;
+  }
+  onCancel() {
+    this.router.navigate(['']);
   }
 }

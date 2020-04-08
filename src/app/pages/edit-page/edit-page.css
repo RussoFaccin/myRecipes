@@ -2,6 +2,7 @@
   width: 100%;
   height: auto;
   overflow: auto;
+  padding-bottom: 10vmin;
 }
 
 .recipeForm__actionBox {
@@ -14,6 +15,10 @@
 
 .formSection {
   margin-bottom: 10vmin;
+}
+
+.fldRecipeTitle {
+  margin-left: 10px;
 }
 
 .m-recipeThumb {

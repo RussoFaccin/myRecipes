@@ -3,7 +3,11 @@
     <div class="m-recipeForm">
       <div class="formSection">
         <div class="mrcpInput__group">
-          <input class="mrcpInput__input" type="text" [(ngModel)]="recipe.title" name="fld_title" placeholder="Title"/>
+          <button (trigger)="onCancel()" class="toolButton" mrcpRipple>
+            <img class="toolButton__imageContent" src="/assets/img/BackButton.svg" alt="">
+            <span class="u-sr-only">Go back</span>
+          </button>
+          <input class="mrcpInput__input fldRecipeTitle" type="text" [(ngModel)]="recipe.title" name="fld_title" placeholder="Title"/>
         </div>
       </div>
       <div class="formSection">

@@ -1,11 +1,11 @@
-<section class="m-pageContainer">
+<section class="m-pageContainer m-pageContainer--homePage">
   <div class="m-appContent m-appContent--homePage">
     <app-new-recipe-dialog
       *ngIf="recipeService.recipes.length == 0"
     ></app-new-recipe-dialog>
     <div class="appTools" *ngIf="recipeService.recipes.length > 0">
       <button (click)="onToggleDrawer()" class="toolButton">
-        <img class="toolButton__imageContent" src="/assets/img/Filter Button.svg" alt="">
+        <img class="toolButton__imageContent" src="/assets/img/FilterButton.svg" alt="">
       </button>
       <div class="mrcpInput__group appTools__group">
         <input class="appTools__input" type="text" name="fld_search" id="fld_search" (input)="onSearch($event)" placeholder="Search">

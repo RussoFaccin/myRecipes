@@ -1,6 +1,12 @@
 <section class="m-pageContainer">
   <div class="m-appContent m-editPage">
-    <h2>{{selectedRecipe.title}}</h2>
+    <div class="mrcpInput__group">
+      <button (trigger)="onCancel()" class="toolButton" mrcpRipple>
+        <img class="toolButton__imageContent" src="/assets/img/BackButton.svg" alt="">
+        <span class="u-sr-only">Go back</span>
+      </button>
+      <h2>{{selectedRecipe.title}}</h2>
+    </div>
     <img class="m-editPage__thumb" src="{{selectedRecipe.thumb}}" alt="">
     <h3>Category: {{selectedRecipe.category | categoryName}}</h3>
     <app-list-item
