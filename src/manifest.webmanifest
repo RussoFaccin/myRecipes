@@ -2,8 +2,9 @@
   "name": "myRecipes",
   "short_name": "myrecipes",
   "theme_color": "#f26119",
-  "background_color": "#fafafa",
+  "background_color": "#242424",
   "display": "standalone",
+  "orientation": "portrait",
   "scope": "./",
   "start_url": "./",
   "icons": [
